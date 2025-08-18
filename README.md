@@ -1,2 +1,1 @@
 # JavaProjects
-Java Projects
