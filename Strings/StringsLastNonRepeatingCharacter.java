@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class StringsLastNonRepeatingCharacter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        for (int i = a.length() - 1; i > 0; i--) {
+            char ch1 = a.charAt(i);
+            int c = 0;
+            if (a.indexOf(ch1) < i) {
+                continue;
+            }
+            for (int j = a.length() - 1; j > 0; j--) {
+                char ch2 = a.charAt(j);
+                if (ch1 == ch2) {
+                    c++;
+                }
+            }
+            if (c == 1) {
+                System.out.println(a.charAt(i) + " " + c);
+                break;
+            }
+        }
+        sc.close();
+    }
+}
